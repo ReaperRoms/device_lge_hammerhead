@@ -31,10 +31,6 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
-# Kernel config
-TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
-TARGET_KERNEL_CONFIG := unicornblood_defconfig
-
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
@@ -105,7 +101,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_hammerhead_defconfig
+TARGET_KERNEL_CONFIG := unicornblood_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 
 ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
@@ -125,6 +121,9 @@ BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
 BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy-hammerhead_fp
+       
+# PDFIUM
+TARGET_NEEDS_PDFIUM_BIGINT := true       
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
