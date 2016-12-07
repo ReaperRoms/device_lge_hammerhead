@@ -2,7 +2,7 @@
   {
    "remote": "github",
    "repository":  "DirtyUnicorns/android_kernel_lge_hammerhead",
-   "target_path": "kernel/lge/hammerhead"
+   "target_path": "kernel/lge/hammerhead",
    "branch":      "n"
   },
   {
